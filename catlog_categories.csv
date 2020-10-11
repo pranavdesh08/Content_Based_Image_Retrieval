@@ -1,0 +1,62 @@
+index,picture_name,category,client_id,price,product_name,color
+0,bed_001.jpg, bed,101,1500,Double bed,white brown
+1,bed_002.jpg, bed,101,1200,Brown Double Bed,
+2,bed_003.jpg, bed,101,333,Red Double Bed,rosybrown
+3,bed_004.jpg, bed,101,444,Grey Bed,darkgrey
+4,bed_005.jpg, bed,101,555,Kids Bed,darkgrey
+5,bed_006.jpg, bed,101,666,Blue Bed,darkgrey
+6,bed_007.jpg, bed,101,777,Wooden Bed,darkgrey
+7,bed_008.jpg, bed,101,888,Metal Bed,darkgrey
+8,bed_009.jpg, bed,101,999,Double Bed,grey
+9,bed_010.jpg, bed,101,1000,Double Bed,grey
+0,chair_001.jpg, chair,2,111,Comfortable Chair,darkgrey
+1,chair_002.jpg, chair,2,222,Office Chair,darkgrey
+2,chair_003.jpg, chair,2,333,Wooden Chair,tan
+3,chair_004.jpg, chair,2,444,White Chair,tan
+4,chair_005.jpg, chair,2,555,Wooden Chair,silver
+5,chair_006.jpg, chair,2,666,Black Office Chair,darkgrey
+6,chair_007.jpg, chair,2,777,Grey Chair,grey
+7,chair_008.jpg, chair,2,888,Blue Chair,slategrey
+8,chair_009.jpg, chair,2,999,Metal Chair,slategrey
+9,chair_010.jpg, chair,2,1000,Black Chair,darkgrey
+0,acura.jpg, car,3,1111,ACURA,sienna
+1,amg.jpg, car,3,2222,MERCEDES BenZ- AMG ,darkolivegreen
+2,bmwi8.jpg, car,3,3333,BMW I8,dimgrey
+3,corvette (2).jpg, car,3,4444,CORVETTE,dimgrey
+4,corvette.jpg, car,3,5555,CORVETTE 2020,sienna
+5,fordgt.jpg, car,3,6666,FORD GT,darkolivegreen
+6,koenigsegg.jpg, car,3,7777,KOENIGSEGG,grey
+7,lamborghini.jpg, car,3,8888,LAMBORGHINI,palevioletred
+8,supra.jpg, car,3,9999,SUPRA,grey
+9,tesla.jpg, car,3,10000,TESLA,dimgrey
+0,desk_001.jpg, desk,10,11,DESK,lightgrey
+1,desk_002.jpg, desk,10,22,DESK,grey
+2,desk_003.jpg, desk,10,33,DESK,silver
+3,desk_004.jpg, desk,10,44,DESK,darkgrey
+4,desk_005.jpg, desk,10,55,DESK,silver
+5,desk_006.jpg, desk,10,66,DESK,lightgrey
+6,desk_007.jpg, desk,10,77,DESK,tan
+7,desk_008.jpg, desk,10,88,DESK,gainsboro
+8,desk_009.jpg, desk,10,99,DESK,silver
+9,desk_010.jpg, desk,10,100,DESK,darkgrey
+0,lamp_001.jpg, lamp,111,11,LAMP,gainsboro
+1,lamp_002.jpg, lamp,111,22,LAMP,lightgrey
+2,lamp_003.jpg, lamp,111,33,LAMP,darkgrey
+3,lamp_004.jpg, lamp,111,44,LAMP,grey
+4,lamp_005.jpg, lamp,111,55,LAMP,silver
+5,lamp_006.jpg, lamp,111,66,LAMP,whitesmoke
+6,lamp_007.jpg, lamp,111,77,LAMP,rosybrown
+7,lamp_008.jpg, lamp,111,88,LAMP,lightgrey
+8,lamp_009.jpg, lamp,111,99,LAMP,gainsboro
+9,lamp_010.jpg, lamp,111,100,LAMP,whitesmoke
+0,sofa_001.jpg, sofa,333,111,SOFA,darkgrey
+1,sofa_002.jpg, sofa,333,222,SOFA,lightslategrey
+2,sofa_003.jpg, sofa,333,333,SOFA,darkslategrey
+3,sofa_004.jpg, sofa,333,444,SOFA,peru
+4,sofa_005.jpg, sofa,333,555,SOFA,darkolivegreen
+5,sofa_006.jpg, sofa,333,666,SOFA,dimgrey
+6,sofa_007.jpg, sofa,333,777,SOFA,darkslategrey
+7,sofa_008.jpg, sofa,333,888,SOFA,grey
+8,sofa_009.jpg, sofa,333,999,SOFA,grey
+9,sofa_010.jpg, sofa,333,1111,SOFA,darkslategrey
+0,cat.jpg, cat,1032, 100,['cat'],darkgrey

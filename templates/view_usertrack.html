@@ -1,0 +1,7 @@
+<center>
+    {{ table_html | safe }}
+    <br> 
+    <a href="{{url_for('user_track')}}">Download file</a>
+    <br><br> 
+    <button type="button" onclick="window.location.href='{{ url_for( 'admin' ) }}';">Return to Admin page</button>
+</center>

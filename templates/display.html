@@ -1,0 +1,66 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900&subset=latin,latin-ext">
+    <title style="font-family: 'Muli';">Display Images</title>
+</head>
+<style>
+    table td{
+        color: rgb(255, 255, 255)
+    }
+    body, html {
+        font-family: 'Muli';
+    }
+    h1 {
+        font-size: 22px;
+    }
+    
+</style>
+<body style="background-color:rgb(128,128,128);">
+    <div style="background-color: transparent;float: left;border: radius 0;margin-left: 20px;margin-top: 0px;" >
+        <h1 style="color:rgb(255, 255, 255);margin-top: 0px;">CASE STUDY PRODUCT DISPLAY</h1>
+        <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQEFeSSZOeBs0Q/company-logo_200_200/0?e=2159024400&v=beta&t=EUFLPKW2SCTKriYC9VAB_PLZpqcYdRHg0EVOGsHynxw" alt="logo"width="125" height="150" />
+    </div>
+    <center>
+    <table style="border:3px dashed black;">
+        <h1 style="color:rgb(255, 255, 255);">Click on Image</h1>
+        {% for x in filename | batch(3, '&nbsp;') %}
+            <tr>
+            {% for furniture, product_name, price in x %}
+            <td>
+                <center>
+                <br/>
+                <h style="font-weight: bold;">{{ product_name }}</h>
+                <br/>
+                <a href="{{ url_for('index', filename=furniture ) }}">
+                    <img src ="{{ url_for('static', filename=furniture ) }}" style="width:200px;height:120px;">
+                    </a>
+                    <br/><h style="font-weight: bold;">$ {{ price }}</h>
+                </center>
+            <td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <table style="border:3px dashed black;">
+        <h1 style="color:rgb(255, 255, 255);">{{ filename2 }}</h1>
+        {% for x in filename1 | batch(knn_admin, '&nbsp;') %}
+            <tr>
+            {% for furniture,output_product_name,output_price in x %}
+            <td>
+                <center>
+                <br/> {{ output_product_name }}<br/>
+                <img src ="{{ url_for('send_image', filename=furniture ) }}" style="width:200px;height:120px;">
+                <br/>$ {{ output_price }}
+                </center>
+            <td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+
+</html>
+
+

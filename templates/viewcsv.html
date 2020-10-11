@@ -1,0 +1,81 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    </head>
+   <body>
+    <div>
+        {% block content %}
+        {% if 'query_edit' in request.url %}
+        <div style='margin-left: 50px; width: 40%;'>
+        <div class="alert alert-info" role="alert">
+         <strong>Edit your selected ROW here ...</strong> Edit your selected data line here ...
+        </div>
+
+        {% for eresult in eresults %}
+
+        <form action = "edit" method = "POST">
+         <p>Index: <input class="form-control" type = "text" name = "index" style='width: 100%;' value='{{eresult["index"]}}'/></p>
+         <p>Picture Name: <input class="form-control" type = "text" name = "picture_name" style='width: 100%;' value='{{eresult["picture_name"]}}' /></p>
+         <p>Category: <input class="form-control" type = "text" name = "category" style='width: 100%;' value='{{eresult["category"]}}' /></p>
+         <p>Client ID: <input class="form-control" type = "text" name = "client_id" style='width: 100%;' value='{{eresult["client_id"]}}' /></p>
+         <p>Price: <input class="form-control" type ="text" name = "price" style='width: 100%;' value='{{eresult["price"]}}' /></p>
+         <p>Product Name: <input class="form-control" type ="text" name = "product_name" style='width: 100%;' value='{{eresult["product_name"]}}' /></p>
+         <p>Color: <input class="form-control" type ="text" name = "color" style='width: 100%;' value='{{eresult["color"]}}' /></p>
+         <input type ="hidden" name = "old_picture_name" value='{{eresult["picture_name"]}}' />
+         <input type ="hidden" name = "old_category" value='{{eresult["category"]}}' />
+        
+         <br>
+
+         <p><input class="btn-primary" type = "submit" value = "Update Data" /></p>
+        </form>
+         {% endfor %}
+         {% endif %}
+         {% endblock content %}
+         
+    </div>
+    <div>
+        <center>
+            <button type="button" onclick="window.location.href='{{url_for('download')}}';">Download Catalog file</button>
+            <br><br> 
+            <button type="button" onclick="window.location.href='{{ url_for( 'admin' ) }}';">Return to Admin page</button>
+        </center>
+    </div>
+    <div>  
+        <table class = 'table table-hover' style = 'margin-left: 20px; width: 90%;'>
+            <thead>
+            <tr>
+                <th>index</th>
+                <th>picture_name</th>
+                <th>category</th>
+                <th>client_id</th>
+                <th>price</th>
+                <th>product_name</th>
+                <th>color</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+            </thead>
+
+            {% for result in results %}
+                <tr>
+                    <td>{{result["index"]}}</td>
+                    <td>{{result["picture_name"]}}</td>
+                    <td>{{result['category']}}</td>
+                    <td>{{result['client_id']}}</td>
+                    <td>{{result['price']}}</td>
+                    <td>{{result['product_name']}}</td>
+                    <td>{{result['color']}}</td>
+                    <td align="center"><a href = "{{ url_for('sql_editlink', efname=result['picture_name'], elname=result['category']) }}"><i class="fas fa-edit"></a></td>
+                    <td align="center"><a href = "{{ url_for('sql_datadelete', fname=result['picture_name'], lname=result['category']) }}"><i class="fas fa-trash-alt"></a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div> 
+    
+
+   </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Muli:400,700,800,900&subset=latin,latin-ext">
+        <div style="background-color: transparent;float: left;border: radius 0;margin-left: 20px;" >
+            <img src="https://media-exp1.licdn.com/dms/image/C4E0BAQEFeSSZOeBs0Q/company-logo_200_200/0?e=2159024400&v=beta&t=EUFLPKW2SCTKriYC9VAB_PLZpqcYdRHg0EVOGsHynxw" alt="logo"width="125" height="150" />
+        </div>
+        <center>
+            <h1 style="color:rgb(255, 255, 255);">WELCOME TO THE ADMIN SETTINGS </h1>
+    </head>
+    <style>
+        input[type=text], select {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=number], select {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=file], select {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit]{
+            background-color: #909697;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #83acc7;
+        }
+        div {border-radius: 100px;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+        body {
+            font-family: 'Muli';font-size: 14px;
+            
+        }
+        .logo{ 
+            float: left;
+            width: 300px;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+    <body style="background-color:rgb(128,128,128);">
+        
+        <div style="border-radius: 100px;background-color: #f2f2f2;padding: 10px; flo">
+        <!--upload form header and link to catlog file and vistors log file-->
+        <h2 style="color:rgb(0, 0, 0);">UPLOAD PRODUCT IMAGES</h2>
+        <div style="position: absolute; top: 2.7%; right:70px; width: 200px; text-align:justify;display: block;padding: 8px;background-color: #f2f2f2;">
+            <a href="{{url_for('viewcsv')}}">Catalog file</a> 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{{url_for('view_user_track')}}">Visitor file</a>
+        </div>
+        <!--form to upload images, enter category,client ID,price -->
+        <form action="{{ url_for('admin') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" multiple> 
+
+            <h3><label for="upload_cat" style="color:rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter category:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" name="upload_cat" value=" " ></h3>
+
+            <h3><label for="upload_id" style="color:rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter client ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="number" name="upload_id" value=" " ></h3>
+
+            <h3><label for="price" style="color:rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter the prices:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" name="price" value=" " ></h3> 
+
+            <input type="submit" value="SUBMIT">
+        </form>
+        <!--form to select category of images to display, select model name, and no. of output images -->
+        <h2 style="color:rgb(0, 0, 0);">DISPLAY PRODUCT IMAGES</h2>
+        
+            <form action="{{ url_for('admin') }}" methods="GET" >
+            <h3 style="color:rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select the category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name= "category">
+                <ul>
+                {%- for item in categories %}
+                    <li><option value= "{{ item }}" SELECTED>{{ item }}<option></li>
+                {%- endfor %}
+                </ul>    
+            </select>
+            </h3>
+
+        <h3 style="color:rgb(0, 0, 0);">Select the Image recognition model:
+        <select name= "model">
+            {% for item in model %}
+                <option value= "{{ item }}" SELECTED>{{ item }}<option>
+            {% endfor %}
+        </select>
+        </h3>
+
+        <h3 style="color:rgb(0, 0, 0);">Select Number of output images: &nbsp;&nbsp;&nbsp;&nbsp;
+            <label for="k_nn" style="color:rgb(0, 0, 0);"></label>
+            <input type="number" name="k_nn" value=" " min="1" max="10">
+        </h3>
+        
+        <input type="submit" value="SAVE SETTINGS">
+
+        </form>
+        </center>
+        </div>
+    </body>
+</html>
