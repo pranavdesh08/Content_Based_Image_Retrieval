@@ -1,4 +1,4 @@
-# pranav-image-features
+# CONTENT BASED IMAGE RETRIEVAL
 
 
 app.py is a flask file (used for running the application)
