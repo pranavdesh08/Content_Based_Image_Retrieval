@@ -21,12 +21,32 @@ Model.py contains Resnet50 and Vgg19 models used for (Transfer Learning) these m
 ![](/images/admin.png)
 <br>
 
-<h2>  VGG19 OUTPUT </h2>
+<h2>                 VGG19 OUTPUT                  </h2>
+<h2> o/p 1 </h2>
+
 ![](/images/vgg19.png)
 
+<br>
 
+<h2> o/p 2 </h2>
 
+![](/images/vgg19%20(2).png)
 
+<br>
+
+<h2>                 RESNET50 OUTPUT                  </h2>
+
+![](/images/resnet50.png)
+
+<br>
+
+<h3> We can view the list of images in our database by clicking on Catlog file link on ADMIN page </h3>
+
+![](/images/database.png)
+
+<br>
+
+<h5> Instructions </h5>
 
 app.py is a flask file (used for running the application)
 
