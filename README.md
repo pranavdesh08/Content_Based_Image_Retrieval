@@ -13,7 +13,7 @@ Model.py contains Resnet50 and Vgg19 models used for (Transfer Learning) these m
 
 <h4> In order to interact with the model we have create a web apllication using Flask framework. The Query will be select from the home page by clicking on the image.</h4>
 <img src=“https://github.com/pranavdesh08/Content_Based_Image_Retrieval/blob/main/images/home.png” >
-![](images/home.png)
+![GitHub Logo](/images/home.png)
 
 
 app.py is a flask file (used for running the application)
