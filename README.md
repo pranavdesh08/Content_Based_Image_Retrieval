@@ -11,9 +11,12 @@ Model.py contains Resnet50 and Vgg19 models used for (Transfer Learning) these m
 ●	We will download these weights, the Neural Networks extracts the features from images by converting the images in an vector representation. ● We will store the vector representation of the database images, the query image will be converted to a vector using the same network. ● To find the similar images we will calculate the distance between the Query image (vector representation) and the (vector representation) of databasee images. ● In the end KNN algorithm will used to find the k-nearest images to the Query image. 
 </h4>
 
-<h4> In order to interact with the model we have create a web apllication using Flask framework. The Query will be select from the home page by clicking on the image.</h4>
+<h3> In order to interact with the model we have create a web apllication using Flask framework. The Query will be select from the home page by clicking on the image.</h3>
 
-![GitHub Logo](/images/home.png)
+![](/images/home.png)
+
+<h2>   </h2>
+
 
 
 app.py is a flask file (used for running the application)
