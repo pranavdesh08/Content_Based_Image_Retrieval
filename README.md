@@ -14,8 +14,17 @@ Model.py contains Resnet50 and Vgg19 models used for (Transfer Learning) these m
 <h3> In order to interact with the model we have create a web apllication using Flask framework. The Query will be select from the home page by clicking on the image.</h3>
 
 ![](/images/home.png)
+<br>
 
-<h2>   </h2>
+<h3> From the Admin page we can add new images to the database, and change settings of the model (i.e choose RESNET50 or VGG19) with desired no. of o/p images. </h3>
+
+![](/images/admin.png)
+<br>
+
+<h2>  VGG19 OUTPUT </h2>
+![](/images/vgg19.png)
+
+
 
 
 
